@@ -34,3 +34,6 @@ Cualquier commit nuevo en la rama conectada puede activar el despliegue automát
 - Montos en pesos chilenos con signo $ y separador de miles en formularios de dinero.
 - Caja explicada paso a paso y compras de ingredientes aclaradas.
 - Los datos existentes en IndexedDB no se borran al actualizar los archivos.
+
+## Versión 1.0.3
+Barra inferior reducida a las proporciones originales (v1), conservando los iconos estilizados de v1.0.2. Sin cambios en los datos o funciones.
