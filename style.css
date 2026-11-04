@@ -81,3 +81,6 @@ body{background:linear-gradient(155deg,#fffaf7 0%,#fff4f7 58%,#fffaf7 100%)}
 .tab-highlight{animation:slideHighlight .48s var(--ease-sweet) both}
 @keyframes slideHighlight{from{transform:translateX(calc(var(--previous-index) * 100%))}to{transform:translateX(calc(var(--active-index) * 100%))}}
 @media(prefers-reduced-motion:reduce){.tab-highlight{animation:none!important;transform:translateX(calc(var(--active-index) * 100%))}}
+
+/* Dulce Control 1.0.6: compras simples */
+.expense-total{display:flex;flex-direction:column;gap:5px;text-align:center;padding:17px}.expense-total strong{font-size:1.8rem;color:#9c5474;font-variant-numeric:tabular-nums}.expense-total .hint{margin:0}.expense-history{margin-top:12px}.expense-history .listline{gap:10px}.expense-history b{overflow-wrap:anywhere}

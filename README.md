@@ -46,3 +46,11 @@ Barra inferior reducida a las proporciones originales (v1), conservando los icon
 - Deslizar tarjetas de productos y bolsitas hacia la izquierda para mostrar Eliminar. La eliminación pide confirmación y bloquea artículos con ventas históricas.
 - Se conservan las bolsitas antiguas y los registros de IndexedDB; las bolsitas antiguas vinculadas siguen funcionando.
 - Para ventas existentes, exporta respaldo JSON antes de actualizar.
+
+
+## Versión 1.0.6 — Compras simplificadas
+- Cantidad y precio por unidad, total automático.
+- Métodos de pago para compras: Efectivo, Tarjeta y Dinero personal.
+- Compras anteriores se mantienen compatibles, incluso si tienen métodos antiguos.
+- La caja resta solo las compras registradas como efectivo; tarjeta y dinero personal quedan en el historial sin restarse del efectivo.
+- Los métodos de pago de ventas no se modificaron.
