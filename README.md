@@ -24,3 +24,13 @@ Aplicación PWA independiente para Android. Gestión local de productos, paquete
 
 ## Actualizaciones
 Cualquier commit nuevo en la rama conectada puede activar el despliegue automático de Render. Los datos locales permanecen normalmente al actualizar archivos del mismo origen, pero haz respaldo antes de cambios grandes.
+
+## Actualización 1.0.2
+- Diseño más delicado, botones redondeados y navegación inferior suavizada.
+- Al crear/editar un dulce, ingresar cantidad disponible directamente; el sistema guarda la diferencia como movimiento.
+- Productos con precio unitario $0 para los que se venden exclusivamente en bolsitas.
+- Bolsitas con precio independiente, descontando los dulces que contienen. Ejemplos: 3 alfajores por $1.000 y 4 cuchuflís por $1.000.
+- Sin campo de fotografía.
+- Montos en pesos chilenos con signo $ y separador de miles en formularios de dinero.
+- Caja explicada paso a paso y compras de ingredientes aclaradas.
+- Los datos existentes en IndexedDB no se borran al actualizar los archivos.
