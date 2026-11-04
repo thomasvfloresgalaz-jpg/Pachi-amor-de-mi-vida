@@ -39,3 +39,45 @@
 .swipe-delete svg{width:21px;height:21px}
 .swipe-wrap .thumb{width:43px;height:43px;font-size:20px}
 @media(prefers-reduced-motion:reduce){.page-content,.modal-enter,.modal-enter>.card{animation:none!important}}
+
+/* v1.0.5 — Pachi Motion: compact navigation with a soft sliding selection */
+:root{--ease-sweet:cubic-bezier(.22,1,.36,1)}
+html{overscroll-behavior-y:none}
+body{background:linear-gradient(155deg,#fffaf7 0%,#fff4f7 58%,#fffaf7 100%)}
+.tabs{isolation:isolate;padding:6px 9px calc(6px + env(safe-area-inset-bottom));background:rgba(255,250,249,.88);border-top:1px solid rgba(234,205,213,.65);box-shadow:0 -7px 28px rgba(111,61,72,.07);-webkit-backdrop-filter:blur(18px) saturate(1.25);backdrop-filter:blur(18px) saturate(1.25)}
+.tabs-inner{position:relative;gap:0;isolation:isolate}
+.tab-highlight{position:absolute;z-index:-1;left:0;top:1px;width:20%;height:calc(100% - 2px);border-radius:15px;background:linear-gradient(145deg,rgba(249,221,232,.98),rgba(244,204,221,.84));border:1px solid rgba(228,177,198,.46);box-shadow:0 4px 13px rgba(173,92,130,.14),inset 0 1px 0 rgba(255,255,255,.88);transform:translateX(calc(var(--active-index) * 100%));transition:transform .48s var(--ease-sweet)}
+.tab{position:relative;z-index:1;padding:5px 0 4px;min-height:47px;border-radius:15px;color:#98817f!important;background:transparent!important;transition:color .35s ease,transform .35s var(--ease-sweet)}
+.tab.active{color:#96506f!important}
+.tab-icon{width:27px;height:25px;transition:transform .42s var(--ease-sweet),color .3s ease}
+.tab-icon svg{width:20px;height:20px;stroke-width:1.65}
+.tab.active .tab-icon{color:#a45378;transform:translateY(-2px) scale(1.08)}
+.tab-label{font-size:9px!important;letter-spacing:.01em;transition:color .3s ease,font-weight .3s ease}
+.tab.active .tab-label{color:#914967;font-weight:800}
+.tab:active{transform:scale(.92)}
+.page-content{animation:softPage .42s var(--ease-sweet) both;will-change:transform,opacity}
+.page-content.page-forward{animation-name:softPageForward}
+.page-content.page-back{animation-name:softPageBack}
+@keyframes softPage{from{opacity:.25;transform:translateY(13px) scale(.988);filter:blur(2px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@keyframes softPageForward{from{opacity:.18;transform:translate3d(20px,8px,0) scale(.985);filter:blur(2px)}to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}}
+@keyframes softPageBack{from{opacity:.18;transform:translate3d(-20px,8px,0) scale(.985);filter:blur(2px)}to{opacity:1;transform:translate3d(0,0,0) scale(1);filter:blur(0)}}
+.page-content>.card,.page-content>.grid,.page-content>.row,.page-content>.swipe-wrap{animation:cardBloom .46s var(--ease-sweet) both}
+.page-content>:nth-child(2){animation-delay:.045s}
+.page-content>:nth-child(3){animation-delay:.085s}
+.page-content>:nth-child(4){animation-delay:.12s}
+@keyframes cardBloom{from{opacity:.45;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.modal-enter{animation:veilIn .3s ease both}
+.modal-enter>.card{animation:sheetInSweet .48s var(--ease-sweet) both;box-shadow:0 24px 75px rgba(70,37,50,.2)}
+@keyframes sheetInSweet{from{opacity:.3;transform:translateY(48px) scale(.955)}to{opacity:1;transform:translateY(0) scale(1)}}
+.btn,.smallbtn,.chip,.qty button{transition:transform .3s var(--ease-sweet),background .25s ease,box-shadow .3s ease,filter .3s ease}
+.btn:active,.smallbtn:active,.chip:active,.qty button:active{transform:scale(.94);filter:brightness(1.035)}
+.card,.metric{transition:box-shadow .3s ease,border-color .3s ease}
+.field input,.field select,.field textarea,.money-field{transition:border-color .25s ease,box-shadow .3s ease,background .25s ease}
+.field input:focus,.field select:focus,.field textarea:focus{background:#fff;box-shadow:0 0 0 4px rgba(235,177,199,.22)}
+.swipe-wrap .card{transition:transform .38s var(--ease-sweet)}
+@media(prefers-reduced-motion:reduce){.tab-highlight,.tab,.tab-icon,.page-content,.page-content>* , .modal-enter,.modal-enter>.card{animation:none!important;transition:none!important;filter:none!important}}
+
+/* The navigation is re-rendered on each tab change: animate from the previous tab. */
+.tab-highlight{animation:slideHighlight .48s var(--ease-sweet) both}
+@keyframes slideHighlight{from{transform:translateX(calc(var(--previous-index) * 100%))}to{transform:translateX(calc(var(--active-index) * 100%))}}
+@media(prefers-reduced-motion:reduce){.tab-highlight{animation:none!important;transform:translateX(calc(var(--active-index) * 100%))}}

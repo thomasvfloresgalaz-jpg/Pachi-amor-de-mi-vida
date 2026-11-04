@@ -39,7 +39,7 @@ Cualquier commit nuevo en la rama conectada puede activar el despliegue automát
 Barra inferior reducida a las proporciones originales (v1), conservando los iconos estilizados de v1.0.2. Sin cambios en los datos o funciones.
 
 
-## Versión 1.0.4 — Pachi
+## Versión 1.0.5 — Pachi
 - Barra inferior compacta con iconos SVG de trazos finos, sin símbolos geométricos improvisados.
 - Transiciones suaves al cambiar de pantalla y abrir formularios.
 - Bolsitas independientes: nombre, unidades por bolsita, cantidad de bolsitas listas y precio; no exige producto individual.
