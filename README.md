@@ -37,3 +37,12 @@ Cualquier commit nuevo en la rama conectada puede activar el despliegue automát
 
 ## Versión 1.0.3
 Barra inferior reducida a las proporciones originales (v1), conservando los iconos estilizados de v1.0.2. Sin cambios en los datos o funciones.
+
+
+## Versión 1.0.4 — Pachi
+- Barra inferior compacta con iconos SVG de trazos finos, sin símbolos geométricos improvisados.
+- Transiciones suaves al cambiar de pantalla y abrir formularios.
+- Bolsitas independientes: nombre, unidades por bolsita, cantidad de bolsitas listas y precio; no exige producto individual.
+- Deslizar tarjetas de productos y bolsitas hacia la izquierda para mostrar Eliminar. La eliminación pide confirmación y bloquea artículos con ventas históricas.
+- Se conservan las bolsitas antiguas y los registros de IndexedDB; las bolsitas antiguas vinculadas siguen funcionando.
+- Para ventas existentes, exporta respaldo JSON antes de actualizar.
