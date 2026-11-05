@@ -100,3 +100,48 @@ body{background:linear-gradient(155deg,#fffaf7 0%,#fff4f7 58%,#fffaf7 100%)}
 .expense-collapse{display:block;margin:12px auto 0;border:0;background:transparent;color:#a8587b;padding:10px;font-size:13px;font-weight:700;cursor:pointer}
 @media(max-width:350px){.expense-item{gap:7px}.expense-delete{padding:6px 8px;font-size:11px}.expense-details .hint{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.expense-delete{transition:none}}
+
+/* Dulce Control 1.0.8 — insumos disponibles, reabastecimiento e historial de precios */
+.supply-cash{background:linear-gradient(155deg,#fff,#fff1f6)}
+.supply-total{font-size:clamp(28px,8vw,37px);letter-spacing:-.04em;font-weight:850;color:#99496c;margin:5px 0 9px;font-variant-numeric:tabular-nums}
+.supply-symbol{font-size:25px}
+.supply-summary{margin:13px 0;padding:16px;background:linear-gradient(145deg,#fbe7ef,#fff1f5);border:1px solid #f5d6e2;border-radius:20px;display:flex;flex-direction:column;gap:4px}
+.supply-summary small{font-size:12px;font-weight:700;color:#8e6476}
+.supply-summary strong{font-size:29px;color:#9a4a6b;letter-spacing:-.03em}
+.supply-summary span{font-size:12px;color:#8a7175}
+.supply-list{display:grid;gap:12px;margin:15px 0}
+.supply-card{background:#fff;border:1px solid #f2e1e7;border-radius:21px;padding:15px;box-shadow:0 5px 18px #8e486b0a;min-width:0}
+.supply-top{display:flex;justify-content:space-between;align-items:start;gap:9px}
+.supply-title{display:flex;align-items:center;gap:9px;min-width:0}
+.supply-title>div{min-width:0}
+.supply-title h3{margin:0 0 5px;overflow-wrap:anywhere}
+.supply-emoji{height:37px;width:37px;flex-shrink:0;background:#fff0f5;border-radius:12px;display:grid;place-items:center}
+.supply-status,.purchase-status{display:inline-flex;align-items:center;justify-content:center;border-radius:30px;padding:5px 8px;font-size:10px;font-weight:750;white-space:nowrap}
+.supply-status.available,.purchase-status.live{color:#327555;background:#e9f7ed}
+.supply-status.empty-stock,.purchase-status.used{color:#916e71;background:#f4edef}
+.purchase-status{margin-top:7px}
+.supply-numbers{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;margin:12px 0}
+.supply-numbers>div{display:flex;flex-direction:column;gap:5px;background:#fff7f9;border-radius:14px;padding:11px;min-width:0}
+.supply-numbers small{font-size:11px;color:#93707c}
+.supply-numbers strong{font-size:18px;color:#774a5c;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.supply-price{display:flex;flex-wrap:wrap;align-items:center;gap:7px;padding-bottom:12px;font-size:12px;color:#835c6c}
+.price-change{font-weight:750;border-radius:30px;padding:4px 7px;font-size:11px}
+.price-change.price-up{background:#fff0e5;color:#a65c34}
+.price-change.price-down{background:#e7f5ea;color:#347650}
+.supply-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.supply-tools:has(>button:only-child){grid-template-columns:1fr}
+.supply-tools .btn{min-width:0;min-height:43px;padding:9px 7px;font-size:12px;white-space:normal;line-height:1.2}
+.purchase-last{border-top:1px solid #f2e5e8;padding-top:9px}
+.purchase-subhead{font-weight:750;margin:0 0 4px}
+.supply-card .expense-item{padding:9px 0;align-items:flex-start}
+.supply-card .expense-actions{max-width:53%;align-items:end}
+.supply-card .expense-details>b{font-size:13px}
+.purchase-controls{display:flex;justify-content:flex-end;gap:5px;flex-wrap:wrap}
+.expense-exhaust,.expense-restore{border:1px solid #ead6dd;background:#fff;color:#91647a;min-height:36px;padding:6px 9px;font-size:11px;font-weight:750;border-radius:12px;cursor:pointer;touch-action:manipulation}
+.expense-restore{background:#eaf7ee;color:#36714b;border-color:#cae7d0}
+.supply-history{border-top:1px solid #f4e9ed;padding-top:8px;margin-top:8px}
+.supply-history summary{cursor:pointer;color:#9e5e7b;font-size:12px;font-weight:750;min-height:36px;padding:9px 0;list-style:revert}
+.supply-history[open] summary{border-bottom:1px solid #f4e9ed;margin-bottom:5px}
+.regular-expenses{margin-top:22px}
+@media(max-width:360px){.supply-status{padding:4px 6px}.supply-card{padding:12px}.supply-numbers strong{font-size:16px}.expense-amount{font-size:12px}.purchase-controls{gap:4px}.expense-delete,.expense-exhaust,.expense-restore{min-height:33px;padding:5px 7px}}
+@media(prefers-reduced-motion:reduce){.supply-tools .btn{transition:none}}

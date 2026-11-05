@@ -56,10 +56,27 @@ Barra inferior reducida a las proporciones originales (v1), conservando los icon
 - Los métodos de pago de ventas no se modificaron.
 
 
-## Versión 1.0.7 — Eliminar compras registradas por error
+## Versión 1.0.8 — Eliminar compras registradas por error
 - En **Más → Compras y gastos**, cada compra registrada tiene un botón visible **Eliminar**, incluso si existen otras compras iguales.
 - Antes de borrar, se solicita una confirmación con el nombre, monto y fecha de la compra.
 - Tras eliminar, se recalculan automáticamente las compras del día, las estadísticas y el efectivo esperado en Caja. Los cierres ya guardados permanecen intactos para que puedas revisar la diferencia si corresponde.
 - No se modifican el inventario, los productos, las ventas ni las demás compras.
 - La lista permite pulsar **Ver más compras** para corregir registros más antiguos.
 - Los registros anteriores y el almacenamiento IndexedDB se conservan al actualizar la versión, siempre que uses el mismo dominio y navegador. Haz respaldo antes de reemplazar los archivos.
+
+
+## Nuevo en v1.0.8: insumos y reabastecimientos
+
+- Compras de insumos iguales se agrupan por nombre (sin diferenciar mayúsculas, tildes o espacios dobles).
+- Cada grupo muestra compras, cantidad disponible, inversión disponible y último precio.
+- Reabastecer prellena el último precio y método de pago, y permite ajustar cantidad, precio y fecha. Se crea una nueva compra sin reemplazar historial.
+- Marcar todo agotado: retira el valor de compra de ese insumo del indicador de insumos disponibles en Caja, pero NO altera los gastos históricos ni el cuadre de efectivo.
+- Cada compra puede marcarse Agotado, Reactivar o Eliminar. Reactivar es útil ante errores.
+- El historial de precios/compras anteriores se puede desplegar debajo del grupo.
+- Las compras antiguas se consideran insumos disponibles hasta que se marquen agotadas; si alguna compra era un gasto que no es insumo, eliminarla y volver a anotarla como «Otro gasto» (con respaldo previo) o dejarla disponible para corrección futura.
+- El formulario de compra permite elegir «Insumo» (predeterminado) u «Otro gasto»; los gastos no aparecen como insumos disponibles.
+- No se añadieron alertas «queda poco», cálculo de costos de producción ni nuevas reglas sobre dinero personal, según preferencia.
+
+**Importante:** el indicador de insumos disponibles es el valor de las compras aún no marcadas como agotadas, y NO equivale a inventario exacto, efectivo disponible ni beneficio. Si se consumió parte de un paquete seguirá contando completo hasta marcarlo agotado.
+
+Antes de reemplazar archivos, utilizar «Más → Descargar respaldo JSON». No borrar datos del navegador ni instalar con otro dominio si se necesita conservar el progreso.
