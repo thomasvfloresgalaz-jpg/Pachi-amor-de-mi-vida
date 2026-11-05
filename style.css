@@ -84,3 +84,19 @@ body{background:linear-gradient(155deg,#fffaf7 0%,#fff4f7 58%,#fffaf7 100%)}
 
 /* Dulce Control 1.0.6: compras simples */
 .expense-total{display:flex;flex-direction:column;gap:5px;text-align:center;padding:17px}.expense-total strong{font-size:1.8rem;color:#9c5474;font-variant-numeric:tabular-nums}.expense-total .hint{margin:0}.expense-history{margin-top:12px}.expense-history .listline{gap:10px}.expense-history b{overflow-wrap:anywhere}
+
+/* Dulce Control 1.0.7 — visible deletion in Compras y gastos */
+.expense-item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0;border-bottom:1px solid #f2e5e8}
+.expense-item:last-child{border-bottom:0}
+.expense-details{flex:1;min-width:0;overflow-wrap:anywhere}
+.expense-details>b{display:block;color:#69483e;font-size:14px;line-height:1.35}
+.expense-details .hint{line-height:1.45;margin-top:4px}
+.expense-actions{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:7px}
+.expense-amount{white-space:nowrap;color:#795264;font-size:14px;font-variant-numeric:tabular-nums}
+.expense-delete{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:36px;padding:6px 10px;border:1px solid #f0cbd7;border-radius:12px;background:#fff2f5;color:#a74a6d;font-size:12px;font-weight:700;cursor:pointer;touch-action:manipulation;transition:transform .2s var(--ease-sweet),background .2s ease}
+.expense-delete svg{width:16px;height:16px;flex-shrink:0}
+.expense-delete:active{transform:scale(.94);background:#fae0e9}
+.expense-delete:focus-visible,.expense-collapse:focus-visible{outline:3px solid #bc7592;outline-offset:2px}
+.expense-collapse{display:block;margin:12px auto 0;border:0;background:transparent;color:#a8587b;padding:10px;font-size:13px;font-weight:700;cursor:pointer}
+@media(max-width:350px){.expense-item{gap:7px}.expense-delete{padding:6px 8px;font-size:11px}.expense-details .hint{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.expense-delete{transition:none}}

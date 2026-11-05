@@ -54,3 +54,12 @@ Barra inferior reducida a las proporciones originales (v1), conservando los icon
 - Compras anteriores se mantienen compatibles, incluso si tienen métodos antiguos.
 - La caja resta solo las compras registradas como efectivo; tarjeta y dinero personal quedan en el historial sin restarse del efectivo.
 - Los métodos de pago de ventas no se modificaron.
+
+
+## Versión 1.0.7 — Eliminar compras registradas por error
+- En **Más → Compras y gastos**, cada compra registrada tiene un botón visible **Eliminar**, incluso si existen otras compras iguales.
+- Antes de borrar, se solicita una confirmación con el nombre, monto y fecha de la compra.
+- Tras eliminar, se recalculan automáticamente las compras del día, las estadísticas y el efectivo esperado en Caja. Los cierres ya guardados permanecen intactos para que puedas revisar la diferencia si corresponde.
+- No se modifican el inventario, los productos, las ventas ni las demás compras.
+- La lista permite pulsar **Ver más compras** para corregir registros más antiguos.
+- Los registros anteriores y el almacenamiento IndexedDB se conservan al actualizar la versión, siempre que uses el mismo dominio y navegador. Haz respaldo antes de reemplazar los archivos.
