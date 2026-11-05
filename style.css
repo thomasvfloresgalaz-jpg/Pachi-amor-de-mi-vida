@@ -145,3 +145,18 @@ body{background:linear-gradient(155deg,#fffaf7 0%,#fff4f7 58%,#fffaf7 100%)}
 .regular-expenses{margin-top:22px}
 @media(max-width:360px){.supply-status{padding:4px 6px}.supply-card{padding:12px}.supply-numbers strong{font-size:16px}.expense-amount{font-size:12px}.purchase-controls{gap:4px}.expense-delete,.expense-exhaust,.expense-restore{min-height:33px;padding:5px 7px}}
 @media(prefers-reduced-motion:reduce){.supply-tools .btn{transition:none}}
+
+/* v1.0.9 — compras individuales, acciones junto a cada registro, sin tarjetas agrupadas. */
+.purchase-entry{display:block;padding:13px 0;border-bottom:1px solid #f2e1e7}
+.purchase-entry .expense-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.purchase-entry .expense-details{flex:1;min-width:0}
+.purchase-entry .expense-amount{padding-top:1px;text-align:right;flex-shrink:0;font-size:14px}
+.purchase-entry .purchase-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:10px}
+.purchase-entry .purchase-controls.single{grid-template-columns:1fr}
+.purchase-entry .purchase-controls button{font:inherit;font-size:11px;font-weight:750;min-width:0;min-height:38px;padding:7px 4px;display:inline-flex;gap:4px;align-items:center;justify-content:center;border-radius:12px;white-space:normal;overflow-wrap:anywhere}
+.purchase-entry .expense-restock{border:1px solid #dfc5d3;color:#874f6d;background:#fff4f7;cursor:pointer;touch-action:manipulation}
+.purchase-entry .purchase-status{margin-top:7px;vertical-align:middle}
+.purchase-entry .price-change{margin:7px 0 0 5px;display:inline-flex;vertical-align:middle}
+.purchase-entry .expense-delete{margin:0}
+.purchase-entry .expense-delete svg{width:14px;height:14px}
+@media(max-width:360px){.purchase-entry .purchase-controls{gap:4px}.purchase-entry .purchase-controls button{font-size:10px;padding:7px 3px}.purchase-entry .expense-delete svg{width:12px;height:12px}}

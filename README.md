@@ -80,3 +80,14 @@ Barra inferior reducida a las proporciones originales (v1), conservando los icon
 **Importante:** el indicador de insumos disponibles es el valor de las compras aún no marcadas como agotadas, y NO equivale a inventario exacto, efectivo disponible ni beneficio. Si se consumió parte de un paquete seguirá contando completo hasta marcarlo agotado.
 
 Antes de reemplazar archivos, utilizar «Más → Descargar respaldo JSON». No borrar datos del navegador ni instalar con otro dominio si se necesita conservar el progreso.
+
+
+## Versión 1.0.9 — Corrección de Más y compras individuales
+- Restituye la lista cronológica de **todas las compras por separado**, incluso del mismo insumo; sin agruparlas en tarjetas.
+- Cada compra de insumos tiene **Reabastecer**, **Agotado/Disponible** y **Eliminar** junto al registro, solo dentro de **Más → Compras y gastos**.
+- Reabastecer crea una compra nueva con cantidad, fecha, forma de pago y precio unitario editable; preserva los precios de compras antiguas.
+- Caja muestra el valor de insumos disponibles **solo como información**, sin botón nuevo de administración.
+- Corrige el acceso y la tolerancia a registros antiguos o incompletos en la sección Más.
+- Conserva IndexedDB y el formato de respaldo JSON: ningún dato se borra por actualizar los archivos.
+- Antes de subir a GitHub, descarga un respaldo JSON y conserva una copia fuera del teléfono.
+- No borres los datos del sitio ni cambies el dominio de Render.
